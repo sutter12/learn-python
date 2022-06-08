@@ -2,17 +2,17 @@ import turtle as t
 
 global dotList #List of tuples
 square = [
+    (-100, 100),
     (100, 100),
     (100, -100),
-    (-100, -100),
-    (-100, 100)
+    (-100, -100)
 ]
 star = [
+    (-100, -10),
     (0,150),
-    (100, 90),
-    (-100, 90),
     (100, -10),
-    (-100, -10)
+    (-100, 90),
+    (100, 90)
 ]
 
 def setDots(shape):
@@ -21,8 +21,8 @@ def setDots(shape):
 
     for i in range(len(dotList)):
         t.goto(dotList[i])
-        t.stamp
-        t.write(str(i))
+        t.dot()
+        t.write(str(i+1), move = False, align = 'left', font = ('Arial', 12, 'normal'))
     t.goto(dotList[0]) #goto starting point of drawing
 
 def correctPos(x, y):
@@ -45,9 +45,10 @@ def click(x, y):
 
 dotList = square
 
+t.hideturtle()
+
 setDots(dotList)
 
-t.hideturtle()
 t.speed(0)
 t.pendown()
 
