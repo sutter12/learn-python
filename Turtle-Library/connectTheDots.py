@@ -1,4 +1,4 @@
-import turtle as t
+import turtle as t #https://docs.python.org/3/library/turtle.html
 
 global dotList #List of tuples
 square = [
